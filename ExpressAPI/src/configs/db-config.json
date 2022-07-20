@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "user": "root",
+    "password": "12345",
+    "database": "SampleApp",
+    "waitForConnections": true,
+    "connectionLimit": 10
+}
