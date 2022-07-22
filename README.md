@@ -1,4 +1,4 @@
-# App Authentication
+# Sample Full Stack Application
 ## Table of Contents:
 1. [Project Details](#project-details)
 2. [Express API](#express-api)
