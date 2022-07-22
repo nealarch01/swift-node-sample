@@ -17,6 +17,8 @@ extension RegisterView {
         @Published var confirmedPassword: String = ""
         @Published var location: String = ""
         
+        @Published var isLoading: Bool = false
+        
         @Published var errorMessage: String = ""
         
         func initUserData(_ ud: UserData) {
@@ -24,6 +26,10 @@ extension RegisterView {
         }
         
         func attemptCreateAccount() async {
+            isLoading = true
+            defer {
+                isLoading = false
+            }
             if password != confirmedPassword {
                 errorMessage = "Passwords do not match"
                 return

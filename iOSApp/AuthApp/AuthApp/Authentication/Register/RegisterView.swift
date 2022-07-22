@@ -28,6 +28,13 @@ struct RegisterView: View {
         .onAppear {
             viewModel.initUserData(userData)
         }
+        .fullScreenCover(isPresented: $viewModel.isLoading) {
+            ZStack {
+                Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
+                ProgressView()
+            }
+            .background(BlurredBackground())
+        }
     }
 }
 
