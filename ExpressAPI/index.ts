@@ -2,8 +2,6 @@
 import express from "express";
 import https from "https";
 
-import bodyParser from "body-parser";
-
 // Router imports
 import { loginRouter, registerRouter, userDataRouter } from "./src/routers/routes";
 
