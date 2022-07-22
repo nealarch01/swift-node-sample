@@ -26,7 +26,10 @@ extension LoginView {
         }
         
         func attemptLogin() async {
-            isLoading.toggle()
+            isLoading = true
+            defer {
+                isLoading = false
+            }
             do {
                 let token = try await AuthenticationModel().attepmtLogin(username, password)
                 // Since authentication is successful, set the userData auth token
@@ -41,7 +44,6 @@ extension LoginView {
                 }
                 authSuccessful = false
             }
-            isLoading.toggle()
         }
     }
 }

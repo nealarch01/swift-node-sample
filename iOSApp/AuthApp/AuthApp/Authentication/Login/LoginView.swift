@@ -33,7 +33,7 @@ struct LoginView: View {
                 ProgressView()
             }
             .background(BlurredBackground())
-        }.onAppear {
+        }.onAppear { // Belongs to fullScreenCover
             UIView.setAnimationsEnabled(false)
         }
     }
