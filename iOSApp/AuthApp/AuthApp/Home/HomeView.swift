@@ -39,9 +39,6 @@ struct HomeView: View {
                 Spacer()
             }
             
-            SubmitButton(text: "Update Info", submitAction: {})
-                .padding([.top], 15)
-            
             SubmitButton(text: "Logout", submitAction: viewModel.logout)
                 .padding([.top], 15)
             

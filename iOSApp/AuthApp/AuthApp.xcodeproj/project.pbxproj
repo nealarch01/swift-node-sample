@@ -19,15 +19,12 @@
 		BD9924FB287E0B930086BDA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9924FA287E0B930086BDA5 /* Assets.xcassets */; };
 		BD9924FE287E0B930086BDA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9924FD287E0B930086BDA5 /* Preview Assets.xcassets */; };
 		BD992507287E0BE90086BDA5 /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD992506287E0BE90086BDA5 /* PageHeader.swift */; };
-		BD992509287E0EB90086BDA5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD992508287E0EB90086BDA5 /* ContentViewModel.swift */; };
 		BD99250C287E1FDE0086BDA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99250B287E1FDE0086BDA5 /* LoginView.swift */; };
 		BD99250E287E1FF30086BDA5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99250D287E1FF30086BDA5 /* RegisterView.swift */; };
 		BD992510287E20C70086BDA5 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99250F287E20C70086BDA5 /* AuthenticationView.swift */; };
 		BD992514287E240F0086BDA5 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD992513287E240F0086BDA5 /* Styles.swift */; };
 		BD992516287E26300086BDA5 /* CaptionedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD992515287E26300086BDA5 /* CaptionedTextField.swift */; };
 		BDBA1E442883DA0C0034873C /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA1E432883DA0C0034873C /* AuthenticationModel.swift */; };
-		BDBA1E47288565CF0034873C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA1E46288565CF0034873C /* RootView.swift */; };
-		BDBA1E49288565DC0034873C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA1E48288565DC0034873C /* RootViewModel.swift */; };
 		BDBDC67328836511000090BA /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDC67228836511000090BA /* UserData.swift */; };
 		BDD0CE33288699320058D249 /* BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0CE32288699320058D249 /* BlurredBackground.swift */; };
 		BDD0CE352887AAB90058D249 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD0CE342887AAB90058D249 /* HomeModel.swift */; };
@@ -48,7 +45,6 @@
 		BD9924FA287E0B930086BDA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD9924FD287E0B930086BDA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD992506287E0BE90086BDA5 /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
-		BD992508287E0EB90086BDA5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		BD99250B287E1FDE0086BDA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BD99250D287E1FF30086BDA5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		BD99250F287E20C70086BDA5 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -56,8 +52,6 @@
 		BD992515287E26300086BDA5 /* CaptionedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedTextField.swift; sourceTree = "<group>"; };
 		BDBA1E432883DA0C0034873C /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		BDBA1E452885133E0034873C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		BDBA1E46288565CF0034873C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		BDBA1E48288565DC0034873C /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BDBDC67228836511000090BA /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BDD0CE32288699320058D249 /* BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredBackground.swift; sourceTree = "<group>"; };
 		BDD0CE342887AAB90058D249 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -130,11 +124,8 @@
 				BD9924F8287E0B910086BDA5 /* ContentView.swift */,
 				BD9924FA287E0B930086BDA5 /* Assets.xcassets */,
 				BD9924FC287E0B930086BDA5 /* Preview Content */,
-				BD992508287E0EB90086BDA5 /* ContentViewModel.swift */,
 				BD992513287E240F0086BDA5 /* Styles.swift */,
 				BDBDC67228836511000090BA /* UserData.swift */,
-				BDBA1E46288565CF0034873C /* RootView.swift */,
-				BDBA1E48288565DC0034873C /* RootViewModel.swift */,
 				BDD0CE38288887C70058D249 /* InputValidator.swift */,
 			);
 			path = AuthApp;
@@ -242,7 +233,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD992509287E0EB90086BDA5 /* ContentViewModel.swift in Sources */,
 				BDD0CE39288887C70058D249 /* InputValidator.swift in Sources */,
 				BDBA1E442883DA0C0034873C /* AuthenticationModel.swift in Sources */,
 				BDD0CE352887AAB90058D249 /* HomeModel.swift in Sources */,
@@ -250,12 +240,10 @@
 				BD2C61C3287E4D000014344C /* LoginViewModel.swift in Sources */,
 				BD2C61D02880943A0014344C /* HomeViewModel.swift in Sources */,
 				BD2C61D428809BCF0014344C /* AuthenticationViewModel.swift in Sources */,
-				BDBA1E47288565CF0034873C /* RootView.swift in Sources */,
 				BD2C61CE288094280014344C /* HomeView.swift in Sources */,
 				BD2C61C1287E30AB0014344C /* ViewableSecureField.swift in Sources */,
 				BDD0CE33288699320058D249 /* BlurredBackground.swift in Sources */,
 				BD9924F9287E0B910086BDA5 /* ContentView.swift in Sources */,
-				BDBA1E49288565DC0034873C /* RootViewModel.swift in Sources */,
 				BD992516287E26300086BDA5 /* CaptionedTextField.swift in Sources */,
 				BD992514287E240F0086BDA5 /* Styles.swift in Sources */,
 				BD2C61C7287E62320014344C /* RegisterViewModel.swift in Sources */,

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = ViewModel()
-    
+    @EnvironmentObject private var userData: UserData
     var body: some View {
-        RootView()
-            .environmentObject(viewModel.userData)
+        if userData.authToken == "" {
+            AuthenticationView()
+        } else {
+            HomeView()
+        }
     }
 }
 
