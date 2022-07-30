@@ -1,6 +1,7 @@
 // Node module imports
 import express from "express";
-import https from "https";
+// import https from "https";
+// import fs from "fs";
 
 // Router imports
 import { loginRouter, registerRouter, userDataRouter } from "./src/routers/routes";
@@ -15,7 +16,7 @@ const port = 1234;
 // }));
 
 app.use(express.text({
-    type: "*/*"
+    type: "application/json"
 }));
 
 app.get("/", (req: express.Request, res: express.Response) => {
