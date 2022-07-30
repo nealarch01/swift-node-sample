@@ -19,14 +19,14 @@ async function createUserController(req: Request, res: Response) {
     let location: any = bodyData["location"];
 
     if (username === undefined) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: `Missing field "username"`
         });
     }
 
     if (typeof username !== "string") {
-        return res.send({
+        return res.status(406).send({
             status_code: 406,
             message: `Invalid username`
         });
@@ -35,7 +35,7 @@ async function createUserController(req: Request, res: Response) {
     username = username.toLowerCase();
 
     if (!RegexValid.username(username)) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: `Missing field "username"`
         });
@@ -46,28 +46,28 @@ async function createUserController(req: Request, res: Response) {
     let usernameTaken: boolean | undefined = await UserModel.userExists(username);
 
     if (usernameTaken === undefined) {
-        return res.send({
+        return res.status(500).send({
             status_code: 500,
             message: "Internal server error."
         });
     }
 
     if (usernameTaken === true) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: `Username taken`
         });
     }
 
     if (password === undefined) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: `Missing field "password"`
         });
     }
 
     if (typeof password !== "string") {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: `Missing field "password"`
         });
@@ -78,14 +78,14 @@ async function createUserController(req: Request, res: Response) {
     }
 
     if (!RegexValid.password(password)) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: ""
         });
     }
 
     if (!RegexValid.location(location)) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: "Invalid location"
         });
@@ -93,13 +93,13 @@ async function createUserController(req: Request, res: Response) {
 
     let modelRes = await UserModel.createUser(username, password, location);
     if (modelRes === undefined) {
-        return res.send({
+        return res.status(500).send({
             status_code: 500,
             message: "Connection error"
         });
     }
 
-    return res.send({
+    return res.status(201).send({
         status_code: 201,
         token: modelRes.auth_token
     });

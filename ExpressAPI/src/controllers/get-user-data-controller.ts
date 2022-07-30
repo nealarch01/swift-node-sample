@@ -13,7 +13,7 @@ async function getUserDataController(req: Request, res: Response) {
     let authToken = bodyData["token"];
     
     if (authToken === undefined) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: "Authentication token was not provided"
         });
@@ -22,7 +22,7 @@ async function getUserDataController(req: Request, res: Response) {
     let decoded: UserClientData | undefined = decodeAuthToken(authToken);
     
     if (decoded === undefined) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: "Invalid auth token"
         });
@@ -32,20 +32,20 @@ async function getUserDataController(req: Request, res: Response) {
     let expired: boolean | undefined = isTokenExpired(authToken);
 
     if (expired === undefined) {
-        return res.send({
+        return res.status(500).send({
             status_code: 500,
             message: "Invalid token error"
         });
     }
 
     if (expired === true) {
-        return res.send({
+        return res.status(400).send({
             status_code: 400,
             message: "Token is expired."
         });
     }
 
-    return res.send({
+    return res.status(200).send({
         status_code: 200,
         user_id: decoded.user_id,
         username: decoded.username,
