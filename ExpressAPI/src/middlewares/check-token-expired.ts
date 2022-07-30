@@ -7,6 +7,7 @@ function isTokenExpired(authToken: string): boolean | undefined {
         let decoded: any = jwt.verify(authToken, jwt_secret);
 
         let currentTime = new Date().getTime(); // Get current time 
+        currentTime / 1000; // Divide to match "exp" timestamp
 
         if (currentTime >= decoded.expires) {
             return true;
