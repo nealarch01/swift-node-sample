@@ -5,75 +5,13 @@
 3. [Video Sample](#video)
 ## Project Details
 ### Front-End:
-- iOS Application 
-- Framework: SwiftUI and Swift
+- iOS Application with SwiftUI
 - MVVM Architecture
 
 ### Back-End:
-- HTTP CRUD REST API created with Node.js & Express (TypeScript)
-- JSON Web Tokens
 - Database: MySQL
+- Using JSON Web Tokens
 - MVC Architecture
-
-# Express API
-URL: ```http://127.0.0.1:1234```
-
-## /auth/login (POST)
-### Body parameters (JSON):
-```JSON
-{
-    "username": "some-username",
-    "password": "some-password"
-}
-```
-### Returns:
-```TS
-{
-    status_code: Int,
-    token: String
-}
-```
-
-## /auth/register (POST)
-### Body parameters (JSON):
-```JSON
-{
-    "username": "some-username",
-    "password": "some-password",
-    "location": "some, location"
-}
-```
-### Returns:
-```TS
-{
-    status_code: Int,
-    token: String
-}
-```
-
-## /user (POST)
-### Body parameters (JSON):
-```JSON
-{
-    "token": "abcdefgh12345"
-}
-```
-### Returns:
-```TS
-{
-    user_id: Int,
-    username: String,
-    location: String
-}
-```
-
-## REST API Errors Returns
-```TS
-{
-    status_code: Int,
-    message: String
-}
-```
 
 # Video
 
