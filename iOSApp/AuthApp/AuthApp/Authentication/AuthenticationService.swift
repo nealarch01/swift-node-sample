@@ -41,7 +41,7 @@ fileprivate struct RegisterBodyParams: Codable {
     }
 }
 
-class AuthenticationModel {
+class AuthenticationService {
     public func attepmtLogin(_ username: String, _ password: String) async throws -> String {
         let apiEndpoint = URL(string: "http://127.0.0.1:1234/auth/login")!
         

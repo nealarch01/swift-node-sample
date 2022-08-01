@@ -25,7 +25,7 @@ extension HomeView {
         
         func getUserData() async {
             do {
-                let responseData = try await HomeModel().fetchUserData(authToken: userData!.authToken)
+                let responseData = try await HomeService().fetchUserData(authToken: userData!.authToken)
                 
                 self.userData!.user_id = responseData.user_id
                 self.userData!.username = responseData.username
@@ -34,7 +34,7 @@ extension HomeView {
             } catch let error {
 //                print("Error obtaining data")
                 print(error.localizedDescription)
-                if type(of: error) == HomeModel.self.FetchUserDataError {
+                if type(of: error) == HomeService.self.FetchUserDataError {
                     errorMessage = "Could not obtain user message"
                 } else {
                     errorMessage = "Internal error"

@@ -31,12 +31,12 @@ extension LoginView {
                 isLoading = false
             }
             do {
-                let token = try await AuthenticationModel().attepmtLogin(username, password)
+                let token = try await AuthenticationService().attepmtLogin(username, password)
                 // Since authentication is successful, set the userData auth token
 //                objectWillChange.send()
                 userData!.authToken = token
             } catch let error {
-                if type(of: error) == AuthenticationModel.self.AuthenticationError.self {
+                if type(of: error) == AuthenticationService.self.AuthenticationError.self {
                     errorMessage = error.localizedDescription
                 } else {
                     print("Application error: ", error.localizedDescription)

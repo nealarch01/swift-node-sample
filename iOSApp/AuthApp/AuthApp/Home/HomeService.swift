@@ -23,7 +23,7 @@ fileprivate struct UserDataResponse: Decodable {
     let location: String?
 }
 
-class HomeModel {
+class HomeService {
     public func fetchUserData(authToken: String) async throws -> UserData {
         let user_data = UserData()
         

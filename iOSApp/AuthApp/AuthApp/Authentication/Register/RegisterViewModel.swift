@@ -53,11 +53,11 @@ extension RegisterView {
             }
             
             do {
-                let authToken = try await AuthenticationModel().registerAccount(username, password, location)
+                let authToken = try await AuthenticationService().registerAccount(username, password, location)
                 self.userData!.authToken = authToken
             } catch let error {
                 print(error.localizedDescription)
-                if type(of: error) == AuthenticationModel.self.AuthenticationError.self {
+                if type(of: error) == AuthenticationService.self.AuthenticationError.self {
                     print("API Call Error")
                     errorMessage = error.localizedDescription
                 } else {
