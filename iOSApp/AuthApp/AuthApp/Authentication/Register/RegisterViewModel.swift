@@ -9,8 +9,6 @@ import Foundation
 
 extension RegisterView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var userData: UserData?
-        
         // Input variables
         @Published var username: String = ""
         @Published var password: String = ""
@@ -21,15 +19,8 @@ extension RegisterView {
         
         @Published var errorMessage: String = ""
         
-        func initUserData(_ ud: UserData) {
-            self.userData = ud
-        }
-        
-        func attemptCreateAccount() async {
-            isLoading = true
-            defer {
-                isLoading = false
-            }
+        func attemptCreateAccount(userData: UserData) async {
+
             if password != confirmedPassword {
                 errorMessage = "Passwords do not match"
                 return
@@ -53,8 +44,12 @@ extension RegisterView {
             }
             
             do {
+                isLoading = true
+                defer {
+                    isLoading = false
+                }
                 let authToken = try await AuthenticationService().registerAccount(username, password, location)
-                self.userData!.authToken = authToken
+                userData.authToken = authToken
             } catch let error {
                 print(error.localizedDescription)
                 if type(of: error) == AuthenticationService.self.AuthenticationError.self {

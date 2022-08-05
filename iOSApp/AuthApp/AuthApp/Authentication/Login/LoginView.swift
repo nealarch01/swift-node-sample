@@ -23,10 +23,8 @@ struct LoginView: View {
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(Color.red)
             }
-            SubmitButton(text: "Login", submitAction: viewModel.attemptLogin)
+            SubmitButton(text: "Login", submitAction: { await viewModel.attemptLogin(userData: self.userData )})
                 .padding([.top], 7)
-        }.onAppear {
-            viewModel.initUserData(userData)
         }.fullScreenCover(isPresented: $viewModel.isLoading) {
             ZStack {
                 Color.black.opacity(0.1)
@@ -34,6 +32,8 @@ struct LoginView: View {
                 ProgressView()
             }
             .background(BlurredBackground())
+        }.onAppear {
+            UIView.setAnimationsEnabled(false)
         }
     }
 }

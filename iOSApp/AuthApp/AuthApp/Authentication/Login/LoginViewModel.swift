@@ -19,20 +19,15 @@ extension LoginView {
         
         @Published var isLoading: Bool = false
         
-        @Published var userData: UserData?
         
-        func initUserData(_ ud: UserData) {
-            self.userData = ud
-        }
-        
-        func attemptLogin() async {
-            isLoading = true
+        func attemptLogin(userData: UserData) async {
+            isLoading = true            
             defer {
                 isLoading = false
             }
             do {
-                let token = try await AuthenticationService().attepmtLogin(username, password)
-                userData!.authToken = token
+                let token = try await AuthenticationService().login(username, password)
+                userData.authToken = token
             } catch let error {
                 if type(of: error) == AuthenticationService.self.AuthenticationError.self {
                     errorMessage = error.localizedDescription

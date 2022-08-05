@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject private var viewModel = ViewModel()
-    @EnvironmentObject var userData: UserData
+    @EnvironmentObject var userData: UserData // Obtain EnvironmentObject user data
     var body: some View {
         VStack {
             PageHeader(titleName: "Sign Up")
@@ -23,9 +23,7 @@ struct RegisterView: View {
                     .foregroundColor(Color.red)
                     
             }
-            SubmitButton(text: "Create Account", submitAction: viewModel.attemptCreateAccount)
-        }.onAppear {
-            viewModel.initUserData(userData)
+            SubmitButton(text: "Create Account", submitAction: { await viewModel.attemptCreateAccount(userData: userData)})
         }.fullScreenCover(isPresented: $viewModel.isLoading) {
             ZStack {
                 Color.black.opacity(0.1)
@@ -33,6 +31,8 @@ struct RegisterView: View {
                 ProgressView()
             }
             .background(BlurredBackground())
+        }.onAppear {
+            UIView.setAnimationsEnabled(false)
         }
     }
 }
