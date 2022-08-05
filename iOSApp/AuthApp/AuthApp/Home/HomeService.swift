@@ -1,5 +1,5 @@
 //
-//  HomeModel.swift
+//  HomeService.swift
 //  AuthApp
 //
 //  Created by Neal Archival on 7/19/22.

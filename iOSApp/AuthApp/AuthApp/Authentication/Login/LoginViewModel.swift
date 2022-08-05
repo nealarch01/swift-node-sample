@@ -32,8 +32,6 @@ extension LoginView {
             }
             do {
                 let token = try await AuthenticationService().attepmtLogin(username, password)
-                // Since authentication is successful, set the userData auth token
-//                objectWillChange.send()
                 userData!.authToken = token
             } catch let error {
                 if type(of: error) == AuthenticationService.self.AuthenticationError.self {

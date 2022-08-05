@@ -29,12 +29,11 @@ struct LoginView: View {
             viewModel.initUserData(userData)
         }.fullScreenCover(isPresented: $viewModel.isLoading) {
             ZStack {
-                Color.black.opacity(0.1).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.1)
+                    .ignoresSafeArea(edges: [.all])
                 ProgressView()
             }
             .background(BlurredBackground())
-        }.onAppear { // Belongs to fullScreenCover
-            UIView.setAnimationsEnabled(false)
         }
     }
 }
