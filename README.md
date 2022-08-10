@@ -1,17 +1,9 @@
 # Sample Full Stack Application
-## Table of Contents:
-1. [Project Details](#project-details)
-2. [Express API](#express-api)
-3. [Video Sample](#video)
 ## Project Details
-### Front-End:
-- iOS Application with SwiftUI
-- MVVM Architecture
+<b>Front end</b>: iOS application with SwiftUI with MVVM architecture
 
-### Back-End:
-- Database: MySQL
-- Using JSON Web Tokens
-- MVC Architecture
+<b>Back end</b>: TypeScript, Node.js, Express with MVC architecture using JSON Web Tokens
+
 
 # Video
 
