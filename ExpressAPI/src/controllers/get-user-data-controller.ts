@@ -3,7 +3,6 @@ import { Request, Response } from "express";
 
 // Middleware imports
 import decodeAuthToken from "../middlewares/decode-auth-token";
-import isTokenExpired from "../middlewares/check-token-expired";
 
 // Util imports
 import { UserClientData } from "../utils/types";
@@ -19,29 +18,13 @@ async function getUserDataController(req: Request, res: Response) {
         });
     }
 
+    // Decode the auth token, returns the user client data (user_id, username, and location) if the token is valid.
     let decoded: UserClientData | undefined = decodeAuthToken(authToken);
     
     if (decoded === undefined) {
         return res.status(400).send({
             status_code: 400,
             message: "Invalid auth token"
-        });
-    }
-
-    // Check if the auth token has not expired
-    let expired: boolean | undefined = isTokenExpired(authToken);
-
-    if (expired === undefined) {
-        return res.status(500).send({
-            status_code: 500,
-            message: "Invalid token error"
-        });
-    }
-
-    if (expired === true) {
-        return res.status(400).send({
-            status_code: 400,
-            message: "Token is expired."
         });
     }
 

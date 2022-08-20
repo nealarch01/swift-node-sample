@@ -7,9 +7,6 @@ import UserModel from "../models/user-model";
 // Util imports
 import RegexValid from "../utils/input-regex";
 
-// Middleware imports
-import createAuthToken from "../middlewares/create-auth-token";
-
 
 
 async function createUserController(req: Request, res: Response) {

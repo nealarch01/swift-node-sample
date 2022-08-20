@@ -7,12 +7,11 @@ import createAuthToken from "../middlewares/create-auth-token";
 import { UserClientData, userModelResponse } from "../utils/types";
 
 // Node module imports
-import mysql from "mysql2";
 import DatabaseConnection from "./database-connection";
 
 
 class UserModel {
-    static async authenticateUser(username: string, password: string): Promise<userModelResponse> {
+    async authenticateUser(username: string, password: string): Promise<userModelResponse> {
         let conn = await DatabaseConnection.create();
         if (conn === undefined) {
             return {
@@ -60,7 +59,7 @@ class UserModel {
     }
 
 
-    static async createUser(username: string, password: string, location: string): Promise<userModelResponse> {
+    async createUser(username: string, password: string, location: string): Promise<userModelResponse> {
         let conn = await DatabaseConnection.create();
         if (conn === undefined) {
             return {
@@ -106,7 +105,7 @@ class UserModel {
     }
 
 
-    static async userExists(username: string): Promise<boolean | undefined> {
+    async userExists(username: string): Promise<boolean | undefined> {
         let conn = await DatabaseConnection.create();
         username = username.toLowerCase();
         if (conn === undefined) {
@@ -126,7 +125,7 @@ class UserModel {
         }
     }
 
-    static async userClientData(user_id: number): Promise<UserClientData | undefined> {
+    async userClientData(user_id: number): Promise<UserClientData | undefined> {
         let conn = await DatabaseConnection.create();
         if (conn === undefined) {
             return undefined;
@@ -154,9 +153,9 @@ class UserModel {
         }
     }
 
-    
+
 }
 
 
 
-export default UserModel;
+export default new UserModel();

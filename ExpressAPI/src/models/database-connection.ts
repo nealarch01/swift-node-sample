@@ -8,8 +8,8 @@ class DatabaseConnection {
     static async create(): Promise<mysql.PoolConnection | undefined> {
         let conn: mysql.PoolConnection;
         try {
-            conn = await this.connectionPool.getConnection();
-            return conn;
+            // Aquire a database connection and return it to the caller
+            return await DatabaseConnection.connectionPool.getConnection(); // Note: manually release the connection after use.
         } catch (err) {
             console.log(err);
             return undefined;
